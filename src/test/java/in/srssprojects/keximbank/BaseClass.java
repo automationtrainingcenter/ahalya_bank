@@ -8,10 +8,15 @@ public class BaseClass {
 	WebDriver driver;
 	BankHomePage bankHomePage;
 	AdminHomePage adminHomePage;
+	RoleDetailsPage roleDetailsPage;
+	RoleCreationPage roleCreationPage;
 	
 	public void initialize() {
 		bankHomePage = new BankHomePage(driver);
 		adminHomePage = new AdminHomePage(driver);
+		roleDetailsPage = new RoleDetailsPage(driver);
+		roleCreationPage = new RoleCreationPage(driver);
+				
 	}
 	
 	public void launchBrowser(String browserName, String url) {

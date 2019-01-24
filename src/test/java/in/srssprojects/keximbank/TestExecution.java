@@ -1,5 +1,12 @@
 package in.srssprojects.keximbank;
 
+/*
+ * BranchDetailsPage
+ * BranchCreationPage
+ * EmployeeDetailsPage
+ * EmployeeCreationPage
+ */
+
 public class TestExecution extends BaseClass{
 	
 	public void loginTest() {
@@ -10,6 +17,17 @@ public class TestExecution extends BaseClass{
 	
 	public void logoutTest() {
 		adminHomePage.clickLogout();
+	}
+	
+	public void roleCreationWithValidData() {
+		adminHomePage.clickRoles();
+		roleDetailsPage.clickNewRole();
+		roleCreationPage.fillRoleName("managerOne");
+		roleCreationPage.fillRoleDescription("manager one");
+		roleCreationPage.selectRoletype("E");
+		roleCreationPage.clickSubmit();
+		System.out.println(driver.switchTo().alert().getText());
+		driver.switchTo().alert().accept();
 	}
 
 }

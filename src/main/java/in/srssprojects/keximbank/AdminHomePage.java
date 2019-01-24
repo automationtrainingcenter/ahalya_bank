@@ -12,31 +12,31 @@ public class AdminHomePage {
 	WebDriver driver;
 	
 	//home
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//a[@href='adminflow.aspx']")
 	private WebElement homeButton;
 	
 	//change password
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//img[@id='IMG1']")
 	private WebElement changePassword;
 	
 	//logout button
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//a[@href='home.aspx']")
 	private WebElement logout;
 	
 	//branches
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//a[@href='admin_banker_master.aspx']")
 	private WebElement branches;
 	
 	//roles
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//a[@href='Admin_Roles_details.aspx']")
 	private WebElement roles;
 	
 	//employees
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//a[@href='userdetails.aspx']")
 	private WebElement employees;
 	
 	//users
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//a[@href='Admin_Emp_details.aspx']")
 	private WebElement users;
 	
 	public AdminHomePage(WebDriver driver) {
