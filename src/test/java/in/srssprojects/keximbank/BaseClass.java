@@ -10,12 +10,21 @@ public class BaseClass {
 	AdminHomePage adminHomePage;
 	RoleDetailsPage roleDetailsPage;
 	RoleCreationPage roleCreationPage;
+	BranchDetailsPage branchDetailsPage;
+	BranchCreationPage branchCreationPage;
+	EmployeeDetailsPage employeeDetailsPage;
+	EmployeeCreationPage employeeCreationPage;
+	
 	
 	public void initialize() {
 		bankHomePage = new BankHomePage(driver);
 		adminHomePage = new AdminHomePage(driver);
 		roleDetailsPage = new RoleDetailsPage(driver);
 		roleCreationPage = new RoleCreationPage(driver);
+		branchDetailsPage = new BranchDetailsPage(driver);
+		branchCreationPage = new BranchCreationPage(driver);
+		employeeDetailsPage = new EmployeeDetailsPage(driver);
+		employeeCreationPage = new EmployeeCreationPage(driver);
 				
 	}
 	
