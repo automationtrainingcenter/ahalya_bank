@@ -1,24 +1,24 @@
 package in.srssprojects.keximbank;
 
-/*
- * BranchDetailsPage
- * BranchCreationPage
- * EmployeeDetailsPage
- * EmployeeCreationPage
- */
+import org.testng.annotations.Test;
 
 public class TestExecution extends BaseClass{
 	
+	
+	@Test(priority=0)
 	public void loginTest() {
 		bankHomePage.fillUsernam("Admin");
 		bankHomePage.fillPassword("Admin");
 		bankHomePage.clickLoginButton();
 	}
 	
+	
+	@Test(priority = 15)
 	public void logoutTest() {
 		adminHomePage.clickLogout();
 	}
 	
+	@Test(priority = 1)
 	public void roleCreationWithValidData() {
 		adminHomePage.clickRoles();
 		roleDetailsPage.clickNewRole();

@@ -3,6 +3,7 @@ package in.srssprojects.keximbank;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
 
 public class BaseClass {
 	WebDriver driver;
@@ -28,6 +29,7 @@ public class BaseClass {
 				
 	}
 	
+
 	public void launchBrowser(String browserName, String url) {
 		if (browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", ".//drivers//chromedriver.exe");
