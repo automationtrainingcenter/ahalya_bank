@@ -65,4 +65,11 @@ public class EmployeeCreationPage {
 	}
 	
 	
+	public void fillEmployeeCreationForm(String employerName, String loginPassword, String role, String branch) {
+		this.fillEmployerName(employerName);
+		this.fillLoginPassword(loginPassword);
+		this.selectRole(role);
+		this.selectBranch(branch);
+	}
+	
 }

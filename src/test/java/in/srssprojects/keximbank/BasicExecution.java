@@ -4,12 +4,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class BasicExecution extends TestExecution{
-	@BeforeClass
+	@BeforeClass(groups = {"role","branch","employee", "create", "reset", "cancel"})
 	public void testlaunchBrowser() {
 		launchBrowser("chrome", "http://srssprojects.in");
 	}
 	
-	@AfterClass
+	@AfterClass(groups = {"role","branch","employee", "create", "reset", "cancel"})
 	public void closeBrowser() {
 		driver.close();
 	}

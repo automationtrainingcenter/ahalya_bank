@@ -77,4 +77,14 @@ public class BranchCreationPage {
 	public void clickCancel() {
 		this.cancel.click();
 	}
+	
+	//fill branch creation form
+	public void fillBranchCreationForm(String branchName, String address, String zipcode, String country, String state, String city) {
+		this.fillBranchName(branchName);
+		this.fillAddress(address);
+		this.fillZipcode(zipcode);
+		this.selectCountry(country);
+		this.selectState(state);
+		this.selectCity(city);
+	}
 }

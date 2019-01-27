@@ -1,5 +1,7 @@
 package in.srssprojects.keximbank;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -42,6 +44,7 @@ public class BaseClass {
 		}
 		driver.get(url);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
@@ -49,5 +52,12 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 		initialize();
+	}
+	
+	
+	public String acceptAlert() {
+		String text = driver.switchTo().alert().getText();
+		driver.switchTo().alert().accept();
+		return text;
 	}
 }

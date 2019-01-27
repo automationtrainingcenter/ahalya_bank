@@ -6,9 +6,8 @@
 			<class name="in.srssprojects.keximbank.BasicExecution">
 				<methods>
 					<include name="loginTest"></include>
-					<include name="branchCreationWithBlankData"></include>
-					<include name="roleCreationWithBlankData"></include>
-					<include name="employeeCreationWithBlankData"></include>
+					<include name="roleCreationWithValidData"></include>
+					<include name="roleCreationWithDuplicateData"></include>
 					<include name="logoutTest"></include>
 				</methods>
 			</class>

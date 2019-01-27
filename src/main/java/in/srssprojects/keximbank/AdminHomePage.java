@@ -33,11 +33,11 @@ public class AdminHomePage {
 	
 	//employees
 	@FindBy(how = How.XPATH, using = "//a[@href='userdetails.aspx']")
-	private WebElement employees;
+	private WebElement users;
 	
 	//users
 	@FindBy(how = How.XPATH, using = "//a[@href='Admin_Emp_details.aspx']")
-	private WebElement users;
+	private WebElement employees;
 	
 	public AdminHomePage(WebDriver driver) {
 		this.driver = driver;
@@ -72,6 +72,10 @@ public class AdminHomePage {
 	
 	public void clickUsers() {
 		this.users.click();
+	}
+	
+	public boolean verifyAdminHomePage() {
+		return driver.getCurrentUrl().contains("adminflow");
 	}
 
 }

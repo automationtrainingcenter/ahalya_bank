@@ -71,4 +71,11 @@ public class RoleCreationPage {
 		this.reset.click();
 	}
 
+	
+	//fill role creation form
+	public void fillRoleCreation(String roleName, String roleDescription, String roleType) {
+		this.fillRoleName(roleName);
+		this.fillRoleDescription(roleDescription);
+		this.selectRoletype(roleType);
+	}
 }
