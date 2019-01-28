@@ -1,5 +1,7 @@
 package in.srssprojects.keximbank;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -96,4 +98,9 @@ public class BranchCreationPage {
 //	public WebElement verifyReset() {
 //		return
 //	}
+	
+	public boolean verfiyBranchCreationReset() {
+		List<WebElement> selctedOptions = new Select(this.country).getAllSelectedOptions();
+		return selctedOptions.get(0).getText().equals("Select");
+	}
 }
