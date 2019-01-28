@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class TestExecution extends BaseClass{
 	
 	
-	@Test(priority=0, groups = {"role", "branch", "employee", "create", "reset", "cancel"})
+	@Test(priority=0, groups = {"role", "branch", "employee", "create", "reset", "cancel","search","clear"})
 	public void loginTest() {
 		bankHomePage.fillUsernam("Admin");
 		bankHomePage.fillPassword("Admin");
@@ -13,7 +13,7 @@ public class TestExecution extends BaseClass{
 	}
 	
 	
-	@Test(priority = 18, groups = {"role","branch","employee", "create", "reset", "cancel"})
+	@Test(priority = 18, groups = {"role","branch","employee", "create", "reset", "cancel","search","clear"})
 	public void logoutTest() {
 		adminHomePage.clickLogout();
 	}
@@ -145,5 +145,16 @@ public class TestExecution extends BaseClass{
 		employeeDetailsPage.clickNewEmployee();
 		employeeCreationPage.clickCancel();
 	}
+	
+	@Test(priority = 16,groups = {"search"})
+	public void branchSearch() {
+		branchDetailsPage.clickSearch();
+	}
+	
+	@Test(priority = 17,groups = {"clear"})
+	public void branchClear() {
+		branchDetailsPage.clickClear();
+	}
+	
 	
 }

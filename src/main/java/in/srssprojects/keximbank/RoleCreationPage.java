@@ -1,5 +1,6 @@
 package in.srssprojects.keximbank;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -77,5 +78,9 @@ public class RoleCreationPage {
 		this.fillRoleName(roleName);
 		this.fillRoleDescription(roleDescription);
 		this.selectRoletype(roleType);
+	}
+	
+	public WebElement verifyRoleCreationPage() {
+		return driver.findElement(By.id("txtRname"));
 	}
 }

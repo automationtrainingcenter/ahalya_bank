@@ -1,5 +1,6 @@
 package in.srssprojects.keximbank;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -87,4 +88,12 @@ public class BranchCreationPage {
 		this.selectState(state);
 		this.selectCity(city);
 	}
+	
+	public WebElement verifyBranchCreationPage() {
+		return driver.findElement(By.id("txtbName"));
+	}
+	
+//	public WebElement verifyReset() {
+//		return
+//	}
 }

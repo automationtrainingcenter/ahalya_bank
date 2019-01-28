@@ -1,5 +1,6 @@
 package in.srssprojects.keximbank;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +21,10 @@ public class EmployeeDetailsPage {
 	
 	public void clickNewEmployee() {
 		this.newEmployee.click();
+	}
+	
+	public WebElement verifyEmployeeDetailsPage() {
+		return driver.findElement(By.id("BtnNew"));
 	}
 
 }

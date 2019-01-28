@@ -42,5 +42,9 @@ public class BankHomePage {
 	public void clickLoginButton() {
 		this.loginButton().click();
 	}
+	
+	public WebElement verifyBankHomePage() {
+		return driver.findElement(By.xpath("//a[@href='aboutus.html']//img[@height='27']"));
+	}
 
 }

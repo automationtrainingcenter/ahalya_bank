@@ -1,5 +1,6 @@
 package in.srssprojects.keximbank;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +23,10 @@ public class RoleDetailsPage {
 	//click on new role button
 	public void clickNewRole() {
 		this.newRole.click();
+	}
+	
+	public WebElement verifyRoleDetailsPage() {
+		return driver.findElement(By.id("btnRoles"));
 	}
 
 }
