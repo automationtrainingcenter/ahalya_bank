@@ -1,5 +1,7 @@
 package in.srssprojects.keximbank;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -80,7 +82,13 @@ public class RoleCreationPage {
 		this.selectRoletype(roleType);
 	}
 	
-	public WebElement verifyRoleCreationPage() {
-		return driver.findElement(By.id("txtRname"));
+	public boolean verifyRoleCreationPage() {
+		return this.roleName.isDisplayed();
 	}
+	
+	public boolean verifyRoleCreationReset() {
+		List<WebElement>  selctedOptions= new Select(this.roleType).getAllSelectedOptions();
+		return selctedOptions.get(0).getText().equals("Select");
+	}
+	
 }

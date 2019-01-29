@@ -7,44 +7,43 @@ import org.openqa.selenium.WebElement;
 
 public class BankHomePage {
 	WebDriver driver;
-	
-	//username
+
+	// username
 	public WebElement username() {
 		return driver.findElement(By.id("txtuId"));
 	}
-	
-	//password
+
+	// password
 	public WebElement password() {
 		return driver.findElement(By.id("txtPword"));
 	}
-	
-	//login button
+
+	// login button
 	public WebElement loginButton() {
 		return driver.findElement(By.id("login"));
 	}
-	
+
 	public BankHomePage(WebDriver driver) {
 		this.driver = driver;
 	}
-	
-	
-	//fill username
+
+	// fill username
 	public void fillUsernam(String username) {
 		this.username().sendKeys(username);
 	}
-	
-	//fill password
+
+	// fill password
 	public void fillPassword(String password) {
 		this.password().sendKeys(password);
 	}
-	
-	//click login button
+
+	// click login button
 	public void clickLoginButton() {
 		this.loginButton().click();
 	}
-	
-	public WebElement verifyBankHomePage() {
-		return driver.findElement(By.xpath("//a[@href='aboutus.html']//img[@height='27']"));
+
+	public boolean verifyBankHomePage() {
+		return this.loginButton().isDisplayed();
 	}
 
 }

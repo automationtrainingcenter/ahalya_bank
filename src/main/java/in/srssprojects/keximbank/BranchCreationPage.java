@@ -44,45 +44,46 @@ public class BranchCreationPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void fillBranchName(String branchName) {
-	this.branchName.sendKeys(branchName);
+		this.branchName.sendKeys(branchName);
 	}
-	
+
 	public void fillAddress(String address) {
 		this.address.sendKeys(address);
 	}
-	
+
 	public void fillZipcode(String zipcode) {
 		this.zipcode.sendKeys(zipcode);
 	}
-	
+
 	public void selectCountry(String country) {
 		new Select(this.country).selectByVisibleText(country);
 	}
-	
+
 	public void selectState(String state) {
 		new Select(this.state).selectByVisibleText(state);
 	}
-	
+
 	public void selectCity(String city) {
 		new Select(this.city).selectByVisibleText(city);
 	}
-	
+
 	public void clickSubmit() {
 		this.submit.click();
 	}
-	
+
 	public void clickReset() {
 		this.reset.click();
 	}
-	
+
 	public void clickCancel() {
 		this.cancel.click();
 	}
-	
-	//fill branch creation form
-	public void fillBranchCreationForm(String branchName, String address, String zipcode, String country, String state, String city) {
+
+	// fill branch creation form
+	public void fillBranchCreationForm(String branchName, String address, String zipcode, String country, String state,
+			String city) {
 		this.fillBranchName(branchName);
 		this.fillAddress(address);
 		this.fillZipcode(zipcode);
@@ -90,15 +91,11 @@ public class BranchCreationPage {
 		this.selectState(state);
 		this.selectCity(city);
 	}
-	
-	public WebElement verifyBranchCreationPage() {
-		return driver.findElement(By.id("txtbName"));
+
+	public boolean verifyBranchCreationPage() {
+		return this.branchName.isDisplayed();
 	}
-	
-//	public WebElement verifyReset() {
-//		return
-//	}
-	
+
 	public boolean verfiyBranchCreationReset() {
 		List<WebElement> selctedOptions = new Select(this.country).getAllSelectedOptions();
 		return selctedOptions.get(0).getText().equals("Select");

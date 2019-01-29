@@ -9,22 +9,21 @@ import org.openqa.selenium.support.PageFactory;
 
 public class EmployeeDetailsPage {
 	WebDriver driver;
-	
-	@FindBy(how=How.ID_OR_NAME, using="BtnNew")
+
+	@FindBy(how = How.ID_OR_NAME, using = "BtnNew")
 	private WebElement newEmployee;
-	
-	
+
 	public EmployeeDetailsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void clickNewEmployee() {
 		this.newEmployee.click();
 	}
 	
-	public WebElement verifyEmployeeDetailsPage() {
-		return driver.findElement(By.id("BtnNew"));
+	public boolean verifyEmployeeDetailsPage() {
+		return this.newEmployee.isDisplayed();
 	}
 
 }
