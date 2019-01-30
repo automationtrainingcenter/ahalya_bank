@@ -1,11 +1,14 @@
 package in.srssprojects.keximbank;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BaseClass {
 	WebDriver driver;
@@ -48,6 +51,32 @@ public class BaseClass {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		initialize();
+	}
+	
+	public void launchBrowser(String browserName, String url, String nodeURL) {
+		DesiredCapabilities caps = new DesiredCapabilities();
+		if (browserName.equalsIgnoreCase("chrome")) {
+			caps = DesiredCapabilities.chrome();
+		} else if (browserName.equalsIgnoreCase("firefox")) {
+			caps = DesiredCapabilities.firefox();
+		}
+		caps.setPlatform(Platform.WINDOWS);
+//		if(os.equals("windows")) {
+//			caps.setPlatform(Platform.WIN10);
+//		}else if(os.equals("mac")) {
+//			caps.setPlatform(Platform.EL_CAPITAN);
+//		}
+		try {
+			driver = new RemoteWebDriver(new URL(nodeURL), caps);
+			driver.get(url);
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			Thread.sleep(3000);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
