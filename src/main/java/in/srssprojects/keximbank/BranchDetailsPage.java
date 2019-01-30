@@ -61,8 +61,8 @@ public class BranchDetailsPage {
 		this.clear.click();
 	}
 	
-	public WebElement verifyBranchDetailsPage() {
-		return driver.findElement(By.id("BtnNewBR"));
+	public boolean verifyBranchDetailsPage() {
+		return this.newBranch.isDisplayed();
 	}
 }
 
