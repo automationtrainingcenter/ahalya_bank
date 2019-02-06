@@ -1,7 +1,10 @@
 package in.srssprojects.keximbank;
 
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import javax.xml.stream.EventFilter;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.events.internal.EventFiringKeyboard;
 
 public class BaseClass {
 	WebDriver driver;
@@ -45,6 +50,10 @@ public class BaseClass {
 		} else {
 			throw new RuntimeException("Invalid brwoser name");
 		}
+		EventFiringWebDriver edriver = new EventFiringWebDriver(driver);
+		LIstener listener = new LIstener();
+		edriver.register(listener);
+		driver = edriver;
 		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -72,6 +81,10 @@ public class BaseClass {
 //		}
 		try {
 			driver = new RemoteWebDriver(new URL(nodeURL), caps);
+			EventFiringWebDriver edriver = new EventFiringWebDriver(driver);
+			LIstener listener = new LIstener();
+			edriver.register(listener);
+			driver = edriver;
 			driver.get(url);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
