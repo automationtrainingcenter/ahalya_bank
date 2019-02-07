@@ -25,8 +25,7 @@ public class BaseClass {
 	BranchCreationPage branchCreationPage;
 	EmployeeDetailsPage employeeDetailsPage;
 	EmployeeCreationPage employeeCreationPage;
-	
-	
+
 	public void initialize() {
 		bankHomePage = new BankHomePage(driver);
 		adminHomePage = new AdminHomePage(driver);
@@ -36,9 +35,8 @@ public class BaseClass {
 		branchCreationPage = new BranchCreationPage(driver);
 		employeeDetailsPage = new EmployeeDetailsPage(driver);
 		employeeCreationPage = new EmployeeCreationPage(driver);
-				
+
 	}
-	
 
 	public void launchBrowser(String browserName, String url) {
 		if (browserName.equalsIgnoreCase("chrome")) {
@@ -65,7 +63,7 @@ public class BaseClass {
 		}
 		initialize();
 	}
-	
+
 	public void launchBrowser(String browserName, String url, String nodeURL) {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		if (browserName.equalsIgnoreCase("chrome")) {
@@ -90,13 +88,11 @@ public class BaseClass {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			Thread.sleep(3000);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		initialize();
 	}
-	
-	
+
 	public String acceptAlert() {
 		String text = driver.switchTo().alert().getText();
 		driver.switchTo().alert().accept();

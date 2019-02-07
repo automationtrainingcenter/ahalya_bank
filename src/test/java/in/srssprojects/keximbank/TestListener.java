@@ -1,5 +1,7 @@
 package in.srssprojects.keximbank;
 
+import javax.sound.midi.MidiDevice.Info;
+
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
@@ -28,6 +30,7 @@ public class TestListener implements ISuiteListener, ITestListener {
 	@Override
 	public void onTestStart(ITestResult result) {
 		test = report.startTest(result.getName());
+		test.log(LogStatus.INFO, result.getParameters().toString());
 	}
 
 	@Override
